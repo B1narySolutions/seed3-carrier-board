@@ -5382,6 +5382,18 @@
 		)
 		(uuid "2f9e93f4-8c14-47c7-9c34-3080e57850d8")
 	)
+	(text "SEED3 BREAKOUT HEADERS"
+		(exclude_from_sim no)
+		(at 175.26 176.53 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c791c2d-07d0-4d94-980a-cf1f0bc4e1e6")
+	)
 	(text "OPAMP power rails"
 		(exclude_from_sim no)
 		(at 34.29 136.906 0)
@@ -6085,7 +6097,7 @@
 	)
 	(polyline
 		(pts
-			(xy 170.18 68.58) (xy 170.18 180.34)
+			(xy 170.18 68.58) (xy 170.18 233.68)
 		)
 		(stroke
 			(width 0.254)
@@ -7015,7 +7027,7 @@
 	)
 	(polyline
 		(pts
-			(xy 280.67 15.24) (xy 280.67 177.8)
+			(xy 280.67 15.24) (xy 280.67 233.68)
 		)
 		(stroke
 			(width 0.254)
@@ -7313,7 +7325,7 @@
 		)
 		(uuid "00a5193c-a741-41d9-947f-e6a9d12b36b5")
 	)
-	(label "VIN"
+	(label "+5V"
 		(at 196.85 226.06 180)
 		(effects
 			(font
@@ -7472,16 +7484,6 @@
 			(justify left bottom)
 		)
 		(uuid "2bcd9bd0-641a-4cd1-a683-f5ba65d9f33d")
-	)
-	(label "DGND"
-		(at 215.9 162.56 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "2dbb5a5e-2f5f-4903-be3a-1bb288118f9f")
 	)
 	(label "D4"
 		(at 243.84 130.81 0)
@@ -7743,7 +7745,7 @@
 		)
 		(uuid "6cfa9ee8-5646-47f7-9b68-3f943c5710ae")
 	)
-	(label "DGND"
+	(label "GND"
 		(at 196.85 228.6 180)
 		(effects
 			(font
@@ -8133,16 +8135,6 @@
 		)
 		(uuid "cdd5179d-693e-4a18-ab95-24f7adc71c72")
 	)
-	(label "VIN"
-		(at 215.9 77.47 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d05f1542-af0a-4497-8503-47c75e8134ac")
-	)
 	(label "AUDIO_OUT_2"
 		(at 184.15 102.87 180)
 		(effects
@@ -8223,16 +8215,6 @@
 		)
 		(uuid "e23eb730-0c82-4cc8-af68-6ac0ed3eb247")
 	)
-	(label "AGND"
-		(at 215.9 163.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e328413b-1d89-44a4-817e-588de17dfffd")
-	)
 	(label "USB_D+"
 		(at 247.65 97.79 0)
 		(effects
@@ -8253,7 +8235,7 @@
 		)
 		(uuid "e6921b80-163e-4431-8470-73f14807cfe2")
 	)
-	(label "AGND"
+	(label "GND"
 		(at 246.38 180.34 0)
 		(effects
 			(font
@@ -8411,7 +8393,7 @@
 		(dnp no)
 		(uuid "038615b7-b6f0-443e-b4e8-e46c6bcc4a58")
 		(property "Reference" "J1"
-			(at 36.83 50.8 0)
+			(at 34.29 50.8 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8421,7 +8403,7 @@
 			)
 		)
 		(property "Value" "AudioJack2_Switch"
-			(at 36.83 53.34 0)
+			(at 34.29 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

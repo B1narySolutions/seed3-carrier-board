@@ -17,5 +17,4 @@ Remaining review items, updated 2026-09-15.
 
 ## Housekeeping
 
-- [ ] **Clear the two ERC warnings.** The `VIN` label sits on +5V and the `DGND` label sits on GND. Rename or delete the labels.
 - [ ] **Verify the Seed3 pinout.** A1 uses the Daisy Seed Rev4 symbol and footprint. Confirm it matches the Seed3, especially VIN (pin 39) and the audio pins (16–19).
