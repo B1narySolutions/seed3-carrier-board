@@ -194,7 +194,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KICAD10_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Bourns_PTV09A-4_Single_Vertical_3mmMount.step"
+	(model "${KIPRJMOD}/3dmodels/Bourns_PTV09A-4020F_placeholder.step"
 		(offset
 			(xyz 0 0 0)
 		)
