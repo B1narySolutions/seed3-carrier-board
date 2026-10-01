@@ -5,3 +5,4 @@ The BOM now contains selected manufacturer part numbers, small-quantity DigiKey 
 Purchasing fields were added to the CSV on 2026-09-15; they are not all stored in the schematic. Preserve these fields when regenerating the BOM from KiCad.
 The BOM was regenerated from seed3-carrier.kicad_sch with kicad-cli 10.0.5 on 2026-09-17; references, values, footprints and quantities matched the existing CSV exactly, so no part selections changed.
 DigiKey stock, part status and qty-1 unit price were rechecked on 2026-09-17 and recorded in the Part Status, DigiKey Stock, Unit Price (qty 1) and Stock Checked columns. All 28 ordering numbers were in stock. C9 (GMK316BJ106KL-T) and C12/C13 (GRM32ER71H475KA88L) remain Not For New Designs with ample stock. Availability can be cached; recheck at checkout.
+The "A1 sockets" row (two PPPC201LFBN-RC sockets so the Daisy plugs in and can be swapped) is BOM-only and not in the schematic; re-add it after regenerating the BOM.

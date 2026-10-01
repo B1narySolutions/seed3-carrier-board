@@ -73,15 +73,18 @@ save(
     cyl_z(*pot_shaft, 7.0, 27.0, 6.0),
 )
 
-# Electrosmith Daisy Seed: 51 x 18 x 1.6 PCB on its own male headers soldered
-# straight into the carrier (2.5 mm spacer). Components treated as a 2 mm
-# envelope; micro-USB sits at the pin 1/40 end and overhangs ~1 mm.
-pcb_z0 = 2.5
+# Electrosmith Daisy Seed: 51 x 18 x 1.6 PCB, plugged into two 8.5 mm 1x20
+# female sockets (modelled separately on the A1 footprint) so it can be swapped.
+# Its own male headers add a 2.5 mm plastic spacer on top of the sockets.
+# Components treated as a 2 mm envelope; micro-USB sits at the pin 1/40 end and
+# overhangs ~1 mm.
+socket_h = 8.5
+pcb_z0 = socket_h + 2.5
 pcb_z1 = pcb_z0 + 1.6
 save(
     "Electrosmith_Daisy_Seed_placeholder",
-    box(-1.27, 1.27, -1.27, 49.53, 0, pcb_z0),
-    box(13.97, 16.51, -1.27, 49.53, 0, pcb_z0),
+    box(-1.27, 1.27, -1.27, 49.53, socket_h, pcb_z0),
+    box(13.97, 16.51, -1.27, 49.53, socket_h, pcb_z0),
     box(-1.38, 16.62, -1.38, 49.62, pcb_z0, pcb_z1),
     box(1.5, 13.7, 3.0, 47.0, pcb_z1, pcb_z1 + 2.0),
     box(7.62 - 4.0, 7.62 + 4.0, -2.4, 3.3, pcb_z1, pcb_z1 + 3.0),
