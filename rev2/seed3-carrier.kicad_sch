@@ -11,278 +11,6 @@
 		(comment 1 "Audio interface, controls and power")
 	)
 	(lib_symbols
-		(symbol "Amplifier_Operational:TL072"
-			(pin_names
-				(offset 0.127)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "TL072"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl071.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Dual Low-Noise JFET-Input Operational Amplifiers, DIP-8/SOIC-8"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "dual opamp"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "TL072_1_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "TL072_2_1"
-				(polyline
-					(pts
-						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "TL072_3_1"
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 3.81)
-					(name "V-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 3.81)
-					(name "V+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:Conn_01x20_Socket"
 			(pin_names
 				(offset 1.016)
@@ -6108,6 +5836,414 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Amplifier_Operational:TL074"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TL074"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl071.pdf"
+				(at 1.27 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "quad opamp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x8.7mm*P1.27mm* DIP*W7.62mm* TSSOP*4.4x5mm*P0.65mm* SSOP*5.3x6.2mm*P0.65mm* MSOP*3x3mm*P0.5mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TL074_1_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TL074_2_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TL074_3_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TL074_4_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TL074_5_1"
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "HEADPHONE OUTPUT"
 		(exclude_from_sim no)
@@ -6234,17 +6370,6 @@
 			(justify left bottom)
 		)
 		(uuid "a9c86a61-e146-44a9-9a21-52d439089c5c")
-	)
-	(text "Line out: J2 is fed from HP_L\nthrough J5's tip switch (LINE_SEND).\nPlugging headphones into J5\nmutes J2."
-		(exclude_from_sim no)
-		(at 243.84 39.37 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "ab17534e-2dac-4203-b873-0f806e686203")
 	)
 	(junction
 		(at 76.2 149.86)
@@ -7530,16 +7655,6 @@
 	)
 	(wire
 		(pts
-			(xy 387.35 111.76) (xy 368.3 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bb2a3bff-f131-49b5-bde6-d441a4a5fa80")
-	)
-	(wire
-		(pts
 			(xy 243.84 113.03) (xy 246.38 113.03)
 		)
 		(stroke
@@ -7998,7 +8113,7 @@
 		)
 		(uuid "03199c6a-e926-47fe-9a8d-a78aed4992c9")
 	)
-	(label "D27"
+	(label "HP_DETECT"
 		(at 190.5 140.97 180)
 		(effects
 			(font
@@ -8628,16 +8743,6 @@
 		)
 		(uuid "b43f9121-d45d-48cc-8f0b-c5bcd47c224a")
 	)
-	(label "LINE_SEND"
-		(at 368.3 111.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b6ca10d6-de29-429b-a46e-72b25aa2b00e")
-	)
 	(label "AUDIO_OUT_2"
 		(at 246.38 182.88 0)
 		(effects
@@ -8718,7 +8823,7 @@
 		)
 		(uuid "c76703e0-d5bd-4451-9f5a-b5b0d6b04abd")
 	)
-	(label "D27"
+	(label "HP_DETECT"
 		(at 196.85 213.36 180)
 		(effects
 			(font
@@ -13324,9 +13429,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:TL072")
+		(lib_id "Amplifier_Operational:TL074")
 		(at 44.45 153.67 0)
-		(unit 3)
+		(unit 5)
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13346,7 +13451,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TLV9062IDR"
+		(property "Value" "TLV9064IDR"
 			(at 43.18 154.9399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13357,7 +13462,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 44.45 153.67 0)
 			(hide yes)
 			(show_name no)
@@ -13390,41 +13495,59 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "96f96920-0547-4a68-b080-df3f890da420")
-		)
-		(pin "5"
-			(uuid "36464283-22f4-4c9a-8608-3dc828f19071")
-		)
-		(pin "7"
-			(uuid "5832b8e5-a553-420b-b5e7-54f6ce91b057")
-		)
 		(pin "1"
-			(uuid "3bb87c56-b82b-40e4-9227-064b09564dbd")
+			(uuid "b30c40e1-01c6-4cb9-afa8-3f483ff82bfe")
 		)
 		(pin "2"
-			(uuid "16c01353-0e3f-41fb-8a1e-898697d210a8")
-		)
-		(pin "6"
-			(uuid "30746564-7bff-476c-9352-ce5f96de0f7f")
-		)
-		(pin "8"
-			(uuid "af9c2cf6-ca20-4467-9164-463c7052d2c9")
+			(uuid "d5f02848-e26e-4149-bd65-bb53972f8aa4")
 		)
 		(pin "3"
-			(uuid "d7810093-3630-4d37-a68f-ccf9e3c2eaeb")
+			(uuid "7e95813f-7e5a-43ea-9950-b0e768f71207")
+		)
+		(pin "4"
+			(uuid "97007360-9c41-45b8-9b17-047d4c1d7e5d")
+		)
+		(pin "5"
+			(uuid "02d269ab-9dab-4aa7-b26e-7795a84a11de")
+		)
+		(pin "6"
+			(uuid "50c3e398-35e1-436b-a2bc-50d679018d09")
+		)
+		(pin "7"
+			(uuid "9cc88654-2034-4363-8bcb-233355848f6e")
+		)
+		(pin "8"
+			(uuid "a1884571-19c0-4e01-a628-3104125ed2a3")
+		)
+		(pin "9"
+			(uuid "9a6736b6-7c14-4c03-be6e-4106eff08709")
+		)
+		(pin "10"
+			(uuid "f32bd9bf-71e1-4e61-bbde-1bd55f75ce04")
+		)
+		(pin "11"
+			(uuid "81bf9572-8e2d-49de-8edc-e4d82ad1e233")
+		)
+		(pin "12"
+			(uuid "1d1cb274-3150-415a-b38b-1c8b8f2019fd")
+		)
+		(pin "13"
+			(uuid "5b5d2c44-7a17-4614-b1db-94fa463e5b53")
+		)
+		(pin "14"
+			(uuid "d2a6d784-e6d2-4f9e-ba56-457ba175ac7d")
 		)
 		(instances
 			(project "seed3-carrier"
 				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
 					(reference "U1")
-					(unit 3)
+					(unit 5)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:TL072")
+		(lib_id "Amplifier_Operational:TL074")
 		(at 196.85 43.18 0)
 		(unit 2)
 		(body_style 1)
@@ -13445,7 +13568,7 @@
 				)
 			)
 		)
-		(property "Value" "TLV9062IDR"
+		(property "Value" "TLV9064IDR"
 			(at 196.85 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13455,7 +13578,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 196.85 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -13488,29 +13611,47 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "96f96920-0547-4a68-b080-df3f890da421")
-		)
-		(pin "5"
-			(uuid "36464283-22f4-4c9a-8608-3dc828f19072")
-		)
-		(pin "7"
-			(uuid "5832b8e5-a553-420b-b5e7-54f6ce91b058")
-		)
 		(pin "1"
-			(uuid "3bb87c56-b82b-40e4-9227-064b09564dbe")
+			(uuid "e1460dd9-4c49-4179-b55f-0a2221142048")
 		)
 		(pin "2"
-			(uuid "16c01353-0e3f-41fb-8a1e-898697d210a9")
-		)
-		(pin "6"
-			(uuid "30746564-7bff-476c-9352-ce5f96de0f80")
-		)
-		(pin "8"
-			(uuid "af9c2cf6-ca20-4467-9164-463c7052d2ca")
+			(uuid "f6199e6f-de7c-4713-aae3-c2707db979da")
 		)
 		(pin "3"
-			(uuid "d7810093-3630-4d37-a68f-ccf9e3c2eaec")
+			(uuid "68f23d50-f7ac-4563-9f6f-acbc9cc6ed46")
+		)
+		(pin "4"
+			(uuid "b9252ebf-17e8-43cc-818f-6a8da3c9e814")
+		)
+		(pin "5"
+			(uuid "a5d03897-5c4e-4b77-87c3-7a89bf28b8eb")
+		)
+		(pin "6"
+			(uuid "0f72e25e-1e17-4b3a-9d94-8c799637ea94")
+		)
+		(pin "7"
+			(uuid "67b7088d-7446-4ba3-92e9-c0c05f08644e")
+		)
+		(pin "8"
+			(uuid "6930e9e9-4c65-420c-b122-9dc2fa5bc132")
+		)
+		(pin "9"
+			(uuid "b699bb8d-93a3-4847-8c55-11b9eb14f7e9")
+		)
+		(pin "10"
+			(uuid "77bbbdb9-7a6f-49c0-b662-f262413f8dda")
+		)
+		(pin "11"
+			(uuid "999a3716-e90b-4edc-a972-fd5da1f66eec")
+		)
+		(pin "12"
+			(uuid "2897f577-d768-416d-8405-15ab7761cb99")
+		)
+		(pin "13"
+			(uuid "c9fe4787-b076-4048-a903-b1f2c0e3f704")
+		)
+		(pin "14"
+			(uuid "c9c99f65-bd50-475c-9333-8cc954e25187")
 		)
 		(instances
 			(project "seed3-carrier"
@@ -13522,7 +13663,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:TL072")
+		(lib_id "Amplifier_Operational:TL074")
 		(at 99.06 43.18 0)
 		(unit 1)
 		(body_style 1)
@@ -13543,7 +13684,7 @@
 				)
 			)
 		)
-		(property "Value" "TLV9062IDR"
+		(property "Value" "TLV9064IDR"
 			(at 99.06 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13553,7 +13694,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 99.06 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -13586,29 +13727,47 @@
 				)
 			)
 		)
-		(pin "4"
-			(uuid "96f96920-0547-4a68-b080-df3f890da422")
-		)
-		(pin "5"
-			(uuid "36464283-22f4-4c9a-8608-3dc828f19073")
-		)
-		(pin "7"
-			(uuid "5832b8e5-a553-420b-b5e7-54f6ce91b059")
-		)
 		(pin "1"
-			(uuid "3bb87c56-b82b-40e4-9227-064b09564dbf")
+			(uuid "2504a77f-4aaf-4bc5-9888-761b422bfbac")
 		)
 		(pin "2"
-			(uuid "16c01353-0e3f-41fb-8a1e-898697d210aa")
-		)
-		(pin "6"
-			(uuid "30746564-7bff-476c-9352-ce5f96de0f81")
-		)
-		(pin "8"
-			(uuid "af9c2cf6-ca20-4467-9164-463c7052d2cb")
+			(uuid "c0a71216-8c48-4b25-aea9-818fdd31ba93")
 		)
 		(pin "3"
-			(uuid "d7810093-3630-4d37-a68f-ccf9e3c2eaed")
+			(uuid "fb6ed9dc-eee8-4be9-b9de-8f42d348cf8c")
+		)
+		(pin "4"
+			(uuid "ae1dd640-0a02-481b-b6cc-908b9b01d7db")
+		)
+		(pin "5"
+			(uuid "21c5c28f-8bd4-4bed-823f-3ebe040600ab")
+		)
+		(pin "6"
+			(uuid "13807ffe-d018-4bbd-a6b9-6110827725d1")
+		)
+		(pin "7"
+			(uuid "a8b263a5-3b2f-4673-8bf3-e42afcfbaca2")
+		)
+		(pin "8"
+			(uuid "f60254eb-51cf-4701-9bea-634ba110a8b0")
+		)
+		(pin "9"
+			(uuid "edef716d-1113-498f-b1bb-2e68a1861be2")
+		)
+		(pin "10"
+			(uuid "efc9c1f0-94d7-48d6-baa9-c44adc5fd4a3")
+		)
+		(pin "11"
+			(uuid "cff959ba-f3e8-41d0-90dd-ce38c0bb89fc")
+		)
+		(pin "12"
+			(uuid "83cf8c23-f81a-4b5c-87f1-e004736df7dd")
+		)
+		(pin "13"
+			(uuid "f9172336-8bb2-4c85-ba9a-8ce16305430e")
+		)
+		(pin "14"
+			(uuid "2939ed22-ee4f-4fcf-88cb-7066a9034286")
 		)
 		(instances
 			(project "seed3-carrier"
@@ -18415,6 +18574,1476 @@
 			(justify right bottom)
 		)
 		(uuid "cd2e56b4-3b2e-410e-883b-66b6afbc25b2")
+	)
+	(no_connect
+		(at 387.35 111.76)
+		(uuid "fe8a18a8-76d1-4c00-849d-fb5bdc4448e3")
+	)
+	(text "SPEAKER / LINE SEND"
+		(exclude_from_sim no)
+		(at 17.78 187.96 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "440b5765-5589-46b4-8069-e1dafe2be3e1")
+	)
+	(label "AUDIO_OUT_2"
+		(at 22.86 200.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a40e4683-ac74-4af6-9bc3-2235aba5f522")
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 43.18 200.66 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c3fb2314-3f8e-4d06-9f58-0f4850fd15e2")
+		(property "Reference" "R28"
+			(at 43.18 194.31 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 43.18 196.85 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 43.18 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 43.18 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "652dd9c8-f3dc-4b4a-8b4d-4d61a7cf1d7a")
+		)
+		(pin "2"
+			(uuid "479a7ff2-7be2-4128-aac3-c4793badc200")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 22.86 200.66) (xy 40.64 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f108f2b3-19fb-4100-ab22-57837db68135")
+	)
+	(wire
+		(pts
+			(xy 45.72 200.66) (xy 50.8 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66b4c127-5fef-4cf5-85c6-4e952a5632a8")
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 50.8 203.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9cc6747b-0813-4611-b55d-7af24b3f6554")
+		(property "Reference" "C24"
+			(at 53.34 201.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1nF"
+			(at 53.34 204.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 50.8 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 50.8 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ebcfbb73-01ac-4d15-b93f-1511568b9d86")
+		)
+		(pin "2"
+			(uuid "a6a159e6-30e7-4620-8337-79c84fb152b7")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(junction
+		(at 50.8 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ffc5f894-9ae2-4ad5-8497-fef3c7d0cb10")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 50.8 205.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0085c0bd-6663-499b-ab7c-9386c0d32d77")
+		(property "Reference" "#PWR048"
+			(at 50.8 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 210.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 205.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6b6d9657-5e41-4f35-be8d-edc5d30bbefd")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 58.42 200.66 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cae01dc3-1197-46e8-babb-37550f20954d")
+		(property "Reference" "C25"
+			(at 58.42 195.58 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1uF"
+			(at 58.42 197.485 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 58.42 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 58.42 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "590317a8-f667-4cc4-9386-fdf3151a503b")
+		)
+		(pin "2"
+			(uuid "d56938fa-8cc1-4384-8248-0b85b623687c")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 50.8 200.66) (xy 55.88 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fc1a655-61a7-401d-93f3-e92ded82cefd")
+	)
+	(wire
+		(pts
+			(xy 60.96 200.66) (xy 68.58 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d2ff91e-1cf2-4d9e-b05d-dc2de6036054")
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 68.58 198.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e00e9781-977a-4fe6-9e40-64565a85a735")
+		(property "Reference" "R29"
+			(at 71.12 196.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1M"
+			(at 71.12 199.39 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 68.58 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 68.58 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "330b15b2-7b71-444f-96b0-d101053e6b79")
+		)
+		(pin "2"
+			(uuid "1b0ddec8-2594-4204-8fd0-9e1b00d5d51a")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VREF"
+		(at 68.58 195.58 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "37508588-36bc-47b5-b51d-44e443f6b493")
+	)
+	(junction
+		(at 68.58 200.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "47f16a3a-382c-494d-a536-03062fed9dfa")
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:TL074")
+		(at 99.06 203.2 0)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c8621951-d6a9-4c2e-9f8b-b372ec6f2f3a")
+		(property "Reference" "U1"
+			(at 99.06 193.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV9064IDR"
+			(at 99.06 195.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 99.06 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl074.pdf"
+			(at 99.06 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 99.06 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "8"
+			(uuid "782b3d9c-69de-46bd-a0fd-59a5ec384794")
+		)
+		(pin "9"
+			(uuid "d10e422b-191f-401f-bc47-f801840a745a")
+		)
+		(pin "10"
+			(uuid "fcce20ed-2829-476e-9ada-aa2e8235a057")
+		)
+		(pin "1"
+			(uuid "b5ebc7ce-c901-40b7-8d51-3c7b3f9ebdee")
+		)
+		(pin "11"
+			(uuid "b4fc5198-cc66-4e7b-9bb7-fb6a114227eb")
+		)
+		(pin "12"
+			(uuid "4f47d377-bd4f-44f1-a1b6-3d857a40a361")
+		)
+		(pin "13"
+			(uuid "1b239807-2e4e-4183-a6e9-c17a5d864f4f")
+		)
+		(pin "14"
+			(uuid "45151dcd-d643-44c0-b4bc-74a0f2aa4803")
+		)
+		(pin "2"
+			(uuid "11852161-4e32-49d2-b1a9-e34a943900cb")
+		)
+		(pin "3"
+			(uuid "c781421c-0a14-4081-ac37-3829e8023449")
+		)
+		(pin "4"
+			(uuid "f06fec31-24bc-4ec3-a0f9-a08445d15dbe")
+		)
+		(pin "5"
+			(uuid "f1c3789f-63c1-45bb-b1b2-802f0f9be686")
+		)
+		(pin "6"
+			(uuid "cf023952-9a5a-46f5-9b54-d9276b1ae68a")
+		)
+		(pin "7"
+			(uuid "385d262c-00f0-4d55-9bd5-0533d7740cc6")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "U1")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 68.58 200.66) (xy 91.44 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c6ec821-812e-4312-bee5-9aff04851ada")
+	)
+	(wire
+		(pts
+			(xy 91.44 205.74) (xy 88.9 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e08b48fd-db6e-4583-bc14-53cf51501e1b")
+	)
+	(wire
+		(pts
+			(xy 88.9 205.74) (xy 88.9 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca1e37bb-4fa6-4317-8837-9cb962e7ecf0")
+	)
+	(wire
+		(pts
+			(xy 88.9 210.82) (xy 109.22 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ed73818-6209-4616-b694-d673ca3909d1")
+	)
+	(wire
+		(pts
+			(xy 109.22 210.82) (xy 109.22 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "074a8f7f-b565-4712-8bd4-42214af38842")
+	)
+	(wire
+		(pts
+			(xy 106.68 203.2) (xy 109.22 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba817815-a4cd-4b3e-98e6-af4d7e71773b")
+	)
+	(junction
+		(at 109.22 203.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdb4c16a-a700-4047-b5e0-34f5366263d9")
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 116.84 203.2 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fb8f2311-7779-4159-9b63-59ca1b895eac")
+		(property "Reference" "C26"
+			(at 116.84 198.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10uF"
+			(at 116.84 200.025 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 116.84 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 116.84 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e81f85e4-771d-42aa-b532-047f7855628e")
+		)
+		(pin "2"
+			(uuid "b37f3c19-806d-47ce-8e50-b334f1a90003")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 109.22 203.2) (xy 114.3 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f777a21-288a-41c3-9c3b-09c78dcc0ecc")
+	)
+	(wire
+		(pts
+			(xy 119.38 203.2) (xy 124.46 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d08368b0-487f-4c7a-8da7-1a30ef5de29d")
+	)
+	(label "LINE_SEND"
+		(at 124.46 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "95f382ec-97f3-4786-b9cf-b424112ebf8a")
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:TL074")
+		(at 152.4 203.2 0)
+		(unit 4)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e008484-7432-4baf-b3fe-9a95233dea0d")
+		(property "Reference" "U1"
+			(at 152.4 193.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TLV9064IDR"
+			(at 152.4 195.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
+			(at 152.4 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tl074.pdf"
+			(at 152.4 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Quad Low-Noise JFET-Input Operational Amplifiers, DIP-14/SOIC-14"
+			(at 152.4 203.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "12"
+			(uuid "593292d7-2db0-4bae-a9f8-50707cc6c540")
+		)
+		(pin "13"
+			(uuid "f4ea2f37-2ef9-4485-bd8d-2d177c21ee83")
+		)
+		(pin "14"
+			(uuid "a3bb5f98-bfbe-47fa-b37a-af9dcc0aea27")
+		)
+		(pin "1"
+			(uuid "82aff31f-4bc5-489b-aa85-2785ef97b035")
+		)
+		(pin "10"
+			(uuid "dff851e7-a074-4306-bbd2-c1c8a5383534")
+		)
+		(pin "11"
+			(uuid "6ae0ca84-e60a-4db7-aecf-c2d45c2d3f7c")
+		)
+		(pin "2"
+			(uuid "5efacefe-60c6-406f-a54b-8ad89c329865")
+		)
+		(pin "3"
+			(uuid "5d4b0efd-f7ad-4bc7-98db-e79717e5544e")
+		)
+		(pin "4"
+			(uuid "9fdb18bc-c10f-43e3-9f49-e13aea13b66e")
+		)
+		(pin "5"
+			(uuid "42b6502d-405d-4cc2-82cd-2feb08dc293c")
+		)
+		(pin "6"
+			(uuid "599f7065-e60f-4066-97e4-6f6fdb5c5146")
+		)
+		(pin "7"
+			(uuid "3dd83146-1999-4aa6-9fd5-baa4dbb1fa18")
+		)
+		(pin "8"
+			(uuid "01740372-4ce9-453d-acc0-6c778a773621")
+		)
+		(pin "9"
+			(uuid "68118246-d116-4a42-b14c-f057d72329ea")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "U1")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 139.7 200.66) (xy 144.78 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2fecb98-59b3-4f18-a1fc-bad046afc7a2")
+	)
+	(label "VREF"
+		(at 139.7 200.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "80f9d818-0fc9-4b29-8ea8-772daa8f7512")
+	)
+	(wire
+		(pts
+			(xy 144.78 205.74) (xy 142.24 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc8326d3-16a5-4660-b8ae-f34aea324f75")
+	)
+	(wire
+		(pts
+			(xy 142.24 205.74) (xy 142.24 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e33ee50-b9b4-4af9-a9d4-147c58037911")
+	)
+	(wire
+		(pts
+			(xy 142.24 210.82) (xy 162.56 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cef11a3-08a4-4972-ac63-ebda6f46b670")
+	)
+	(wire
+		(pts
+			(xy 162.56 210.82) (xy 162.56 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89866345-ab34-40d6-a8c0-eb0d4a3d48dd")
+	)
+	(wire
+		(pts
+			(xy 160.02 203.2) (xy 162.56 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bae1156-42d3-4bf4-99de-d1671bfd2c2b")
+	)
+	(text "AUDIO_OUT_2 feeds the speaker amp / J2 independently of the headphones.\nFirmware sets its level and mutes it when HP_DETECT shows headphones are in.\nU1D is a spare, parked as a VREF follower: use it for the AUX input buffer."
+		(exclude_from_sim no)
+		(at 17.78 220.98 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "f1811911-e2e9-4d30-8df1-bb275c1c8880")
+	)
+	(label "HP_DETECT_SW"
+		(at 289.56 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ca2e7fdd-4ffc-45ce-9500-c6e5d5750987")
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 307.34 121.92 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "e2838753-228e-4533-aa9e-921800850123")
+		(property "Reference" "TP11"
+			(at 309.88 117.348 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP_HP_DET"
+			(at 309.88 119.888 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
+			(at 307.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 307.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 307.34 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "eda5b3d2-8040-4587-9796-cb7b99a9057e")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "TP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 314.96 121.92 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fcfc0cd8-4981-4b17-b31f-29a24edf883d")
+		(property "Reference" "R31"
+			(at 314.96 124.46 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 314.96 126.365 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 314.96 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 314.96 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f0b605e8-586e-409f-a987-f593357b08c4")
+		)
+		(pin "2"
+			(uuid "080d1441-328c-4bc5-a195-98cefc6f20a3")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 289.56 121.92) (xy 307.34 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e79c74c1-0627-451a-8a57-cd632f5c8a7d")
+	)
+	(wire
+		(pts
+			(xy 307.34 121.92) (xy 312.42 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b8f7d8f-ae26-40b9-b302-93951432e888")
+	)
+	(wire
+		(pts
+			(xy 317.5 121.92) (xy 322.58 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3181a1ff-b436-4a56-af12-7fa3ce3f9559")
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 322.58 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "27bc99cd-4817-4630-98c8-410d7e15ff6a")
+		(property "Reference" "R30"
+			(at 325.12 117.475 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 325.12 119.38 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 322.58 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 322.58 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a4b92bfb-6cce-46ec-83bd-4c9a33855757")
+		)
+		(pin "2"
+			(uuid "202e4998-e65a-4db5-ac81-4095bf16cda7")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "3V3_D"
+		(at 322.58 116.84 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cad73f2d-df98-4201-b850-91348659ada9")
+	)
+	(junction
+		(at 322.58 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "23212f9f-5f6e-461a-9875-02903a78ab90")
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 327.66 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7b478638-476c-4c1d-96fb-80f9ba43cae6")
+		(property "Reference" "C27"
+			(at 330.2 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 330.2 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
+			(at 327.66 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 327.66 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 327.66 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "14218a1f-fd03-40cb-b9a5-a2efe117b828")
+		)
+		(pin "2"
+			(uuid "131f0f2e-b595-4e28-a742-bb0d6ec3f952")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 322.58 121.92) (xy 327.66 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87caf8ec-8b14-475d-bd64-cdfc37112689")
+	)
+	(wire
+		(pts
+			(xy 327.66 121.92) (xy 332.74 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48bf3411-683e-4fa6-9141-78efb9802107")
+	)
+	(junction
+		(at 327.66 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "30497bfe-6109-495b-bc6f-7a13d931608b")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 327.66 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b4fad969-d455-4085-bd5f-075623dcd68c")
+		(property "Reference" "#PWR049"
+			(at 327.66 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 327.66 132.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 327.66 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 327.66 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 327.66 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b2ede36f-170d-4f9d-84ab-e17a1b3b2be7")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "HP_DETECT"
+		(at 332.74 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "96f4082d-3a5c-4e16-a996-a781d3ce933f")
+	)
+	(text "Headphone detect: J5 needs a jack with an\nisolated detect switch (part TBD). Wire it\nbetween HP_DETECT_SW and GND. Bring-up:\nshort TP11 to GND to simulate headphones."
+		(exclude_from_sim no)
+		(at 289.56 134.62 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "b628c2fd-8e60-4c44-ba82-d0e0e7119569")
 	)
 	(sheet_instances
 		(path "/"
