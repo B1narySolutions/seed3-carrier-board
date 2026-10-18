@@ -13,12 +13,17 @@ roughly 1–2 ms, several hundred times more.
 
 ![Magnitude, phase and group delay](phase_response.png)
 
+Group delay on its own, with the end-to-end value marked at 1 kHz and 10 kHz:
+
+![Group delay](group_delay.png)
+
 ## Method
 
 Netlist exported from `rev1/seed3-carrier.kicad_sch` and component values taken from
 `rev1/fabrication/seed3-carrier-BOM.csv`. Each RC or op-amp stage is modelled as a
 first-order section. The Daisy is treated as an ideal wire: zero output
-impedance, no delay. `phase_response.py` computes and plots the result.
+impedance, no delay. `phase_response.py` computes the result and writes both
+figures (`phase_response.png` and `group_delay.png`).
 
 ## One response or two?
 
