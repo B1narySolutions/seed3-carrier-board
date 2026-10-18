@@ -416,7 +416,7 @@
 			(uuid "46c1596e-f260-4663-bf48-4efcf4e57f90")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Neutrik_NRJ4HF_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Neutrik_NRJ4HF_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -1002,7 +1002,7 @@
 			(uuid "6e644cf5-3cc6-441c-a32f-ab6dd0c9f65e")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Bourns_PTV09A-4020F_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Bourns_PTV09A-4020F_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3621,7 +3621,7 @@
 			(uuid "437e07ac-fed6-4adf-ae0a-e5578c639f57")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Bourns_PTV09A-4020F_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Bourns_PTV09A-4020F_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4119,7 +4119,7 @@
 			(uuid "53b2bcdb-2d38-4ac0-a7d1-f7de7cc88615")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/SameSky_SJ1-3535NG_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/SameSky_SJ1-3535NG_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -4772,7 +4772,7 @@
 			(uuid "191246d8-6b55-4b77-97bd-8888ed095b16")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Neutrik_NRJ4HF_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Neutrik_NRJ4HF_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11480,7 +11480,7 @@
 			(uuid "02a6f70d-cec1-4f0c-8e4a-376628c5e4c2")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Electrosmith_Daisy_Seed_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Electrosmith_Daisy_Seed_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -12706,7 +12706,7 @@
 			(uuid "aaf0d9b6-624e-4ccf-a98b-98d594b28b01")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3dmodels/Bourns_PTV09A-4020F_placeholder.step"
+		(model "${KIPRJMOD}/../3dmodels/Bourns_PTV09A-4020F_placeholder.step"
 			(offset
 				(xyz 0 0 0)
 			)
