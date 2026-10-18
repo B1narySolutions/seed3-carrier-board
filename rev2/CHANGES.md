@@ -38,20 +38,25 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   Power moves to pin 4 (+5V) and pin 11 (GND).
 - **Added:** `HP_DETECT` on Daisy pin 34 (was D27, also renamed on J7), with a 10k pull-up, 1k series resistor (R30, R31) and 100nF (C27).
   TP11 sits on the switch side (`HP_DETECT_SW`).
+- **Changed:** J5 is now a Same Sky **SJ3-35063AG** (3.5 mm stereo, through hole; [datasheet](https://www.sameskydevices.com/product/resource/sj3-3506x.pdf)).
+  Pins 1/2/3 are sleeve/ring/tip on GND/HP_R/HP_L. Pins 5 and 6 are an isolated normally-open switch that closes when a plug
+  is inserted: pin 5 goes to GND and pin 6 to `HP_DETECT_SW`. Pin 4 isn't fitted on this variant.
+  The symbol is new in `seed3-carrier.kicad_sym`, and the footprint is new in
+  `Seed3_Carrier.pretty/Jack_3.5mm_SameSky_SJ3-35063AG_Horizontal.kicad_mod`, drawn from the datasheet's recommended PCB layout.
+  The jack face sits at the board edge (X = −2.4 mm from pin 1), with the nose overhanging.
+  DigiKey had 398 in stock when chosen.
 - **Why:** muting in firmware means the speaker amp can be shut down while headphones are in (saving battery), mute and unmute can ramp
   without clicks, and the speaker and headphones get independent levels.
 
 ## Firmware changes these require
 - Read the encoder on pins 22/23/24 instead of the volume/tone ADCs. Ramp volume changes and use push to mute.
 - Toggle `AUDIO_ALIVE` (pin 33) once per audio callback. Initialise it as a low output.
-- Send the speaker mix to output 2 and headphones to output 1. Read `HP_DETECT` (pin 34). Its polarity depends on the jack:
-  with a normally-closed switch, high means headphones are in. Ramp the speaker down and shut its amp off when headphones are in.
+- Send the speaker mix to output 2 and headphones to output 1. Read `HP_DETECT` (pin 34):
+  **low = headphones in** (J5's normally-open switch closes to GND). Debounce it in firmware. Ramp the speaker down and shut its amp off when headphones are in.
 - Add an output clamp or limiter and NaN/Inf guard at the end of the chain. Enable the STM32 internal watchdog.
 
 ## Open items
-- **Choose J5:** a 3.5 mm stereo jack with an isolated detect switch, whose switch contacts aren't connected to tip or ring.
-  KiCad's stock library has none, so this needs a part pick (check the datasheet's switch drawing), plus a symbol and footprint.
-  Connect its switch between `HP_DETECT_SW` and GND, and update the firmware polarity to match normally-open or normally-closed.
+- **Check the J5 footprint** against a physical part (or a 1:1 print) before ordering boards. It was drawn by hand from the datasheet.
 - **Confirm the U3 timeout:** check tw ≈ K·Rext·Cext against the SN74LVC1G123 datasheet, then measure on the board.
   The target is ~10 ms, comfortably longer than the 2 ms edge period.
 - **Choose an encoder part number** that fits the EC11E footprint (Alps EC11E or Bourns PEC11R with switch).
