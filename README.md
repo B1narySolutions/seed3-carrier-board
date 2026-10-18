@@ -14,7 +14,5 @@ Open `rev1/seed3-carrier.kicad_pro` or `rev2/seed3-carrier.kicad_pro` in KiCad 1
 
 ## Project documentation
 
-Whole-project documentation lives in
-[capstone-documentation](https://github.com/B1narySolutions/capstone-documentation): requirements,
-board measurements, test plans, the rev 2 change list and the decision log. Check there before making a
-decision that affects more than this board, and record board measurements and project-wide decisions there.
+Documentation lives alongside the work: hardware docs (board measurements, test plans, the rev 2 change list) in
+this repository, firmware docs in [realtime-nam-seed3](https://github.com/B1narySolutions/realtime-nam-seed3).
