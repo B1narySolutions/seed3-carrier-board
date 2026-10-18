@@ -7,7 +7,6 @@ The firmware that runs on it is [realtime-nam-seed3](https://github.com/B1narySo
 
 ## Project context
 
-Whole-project documentation lives in [capstone-documentation](https://github.com/B1narySolutions/capstone-documentation):
-requirements, board facts and measurements, test plans, the rev 2 change list and the decision log. Read it before a
-decision that needs full project context, such as connectors, pin assignments, power, audio routing or features the
-spec requires. Record new project-wide decisions and measurements there, not here.
+Documentation lives alongside the work: hardware docs in this repository, firmware docs in
+[realtime-nam-seed3](https://github.com/B1narySolutions/realtime-nam-seed3). Check the firmware repository before a
+decision that affects it, such as pin assignments or audio routing. Record board measurements and decisions here.
