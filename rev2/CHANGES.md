@@ -73,6 +73,16 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **Why:** one connector for power and signals, a clean firmware-controlled shutdown, battery level on the display, and a speaker
   mute that is independent of the headphone amp.
 
+### Internal line out to the speaker amp (J8)
+- **Added:** J8, a 2-pin JST-XH (B2B-XH-A, vertical). Pin 1 is `LINE_OUT` (J2's tip, after R3) and pin 2 is GND.
+  It feeds the speaker amp, which sits on the power board (or an off-the-shelf class D module while prototyping).
+  The net after R3 is now named `LINE_OUT`.
+- **Kept:** J2 (1/4") as an external line out on the same net, for testing with an outside amp before the power board is ready.
+- **Why:** a keyed internal header instead of a 1/4" cable between boards. Sharing R3 keeps the cable capacitance off U1C.
+  Audio ground has its own pin, separate from J3's supply current. Use a short twisted pair routed away from the guitar input and speaker wires.
+- **Speaker wiring** is on the power board, not here: the cone's spade tabs (6.3 mm / 4.8 mm) take crimped quick-disconnects.
+  Most class D amps have a bridged output, so neither speaker wire may be grounded.
+
 ## Firmware changes these require
 - Read the encoder on pins 22/23/24 instead of the volume/tone ADCs. Ramp volume changes and use push to mute.
 - Toggle `AUDIO_ALIVE` (pin 33) once per audio callback. Initialise it as a low output.
