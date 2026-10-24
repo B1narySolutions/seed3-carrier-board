@@ -34,7 +34,7 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   The path is `AUDIO_OUT_2` → R28/C24 (3.3k/1nF, ~48 kHz low-pass, same as the headphone path) → C25/R29 (AC coupling, biased to VREF)
   → U1C buffer → C26 (10µF) → `LINE_SEND` → R3 → J2. J2 and R3/R4 are unchanged and remain the feed to the speaker amp.
 - **Changed:** U1 is now a TLV9064 quad (SOIC-14) instead of the TLV9062 dual, using the same TL07x-style symbol.
-  Units A and B are unchanged. Unit C is the speaker buffer. Unit D is a spare, parked as a VREF follower for the AUX input buffer.
+  Units A and B are unchanged. Unit C is the speaker buffer. Unit D is the AUX input buffer (see below).
   Power moves to pin 4 (+5V) and pin 11 (GND).
 - **Added:** `HP_DETECT` on Daisy pin 34 (was D27, also renamed on J7), with a 10k pull-up, 1k series resistor (R30, R31) and 100nF (C27).
   TP11 sits on the switch side (`HP_DETECT_SW`).
@@ -83,6 +83,18 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **Speaker wiring** is on the power board, not here: the cone's spade tabs (6.3 mm / 4.8 mm) take crimped quick-disconnects.
   Most class D amps have a bridged output, so neither speaker wire may be grounded.
 
+### AUX input (J9 → AUDIO_IN_2)
+- **Added:** J9, a second SJ3-35063AG (3.5 mm TRS, same part and footprint as J5) for backing tracks from a phone or laptop.
+  Its detect switch (pins 5 and 6) is not connected.
+- **Path:** tip and ring → R40/R41 (10k each, passive stereo-to-mono sum, −6 dB) → summing node with R38 (47k to GND) and C31 (1nF, ~32 kHz RF filter)
+  → C32 (1µF) → R39 (100k to VREF, ~1.6 Hz high-pass) → R42 (1k) → U1D follower → `AUDIO_IN_2` (Daisy pin 17).
+  It mirrors the guitar input: biased at VREF, unity-gain buffer, Daisy input DC-coupled from a low impedance.
+- **Changed:** U1D is no longer parked as a VREF follower. Its old wiring is removed, and the unit moved next to the AUX parts.
+  The speaker section is now "Speaker / line send, AUX input".
+- **Why:** the backing track bypasses NAM. The firmware mixes `AUDIO_IN_2` in after the amp model, to both the speaker and headphone outputs.
+  R38 holds the summing node near GND when nothing is plugged in, so an empty jack stays quiet. It also gives the source's own coupling caps a DC return.
+  The −6 dB from summing gives headroom for hot laptop outputs (up to 2 Vrms). The firmware can add gain for quiet phones.
+
 ## Firmware changes these require
 - Read the encoder on pins 22/23/24 instead of the volume/tone ADCs. Ramp volume changes and use push to mute.
 - Toggle `AUDIO_ALIVE` (pin 33) once per audio callback. Initialise it as a low output.
@@ -94,6 +106,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - Drive `SPK_EN` (pin 28) high to enable the speaker amp, low when headphones are in. This replaces shutting the speaker off
   through `AMP_SHUTDOWN`.
 - Read `BATT_SENSE` (pin 25, ADC) and send the battery level to the display. Shut down cleanly when it gets low.
+- Read `AUDIO_IN_2` (the AUX input, mono) and mix it in after the NAM model and cabinet EQ, with its own level control from the display.
+  It goes to both outputs, so backing tracks play through the speaker and the headphones.
 
 ## Open items
 - **Check the J5 footprint** against a physical part (or a 1:1 print) before ordering boards. It was drawn by hand from the datasheet.
@@ -107,7 +121,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **J3 orientation:** vertical (B8B-XH-A) is drawn. Switch to the right-angle S8B-XH-A if the cable has to leave along the board.
 - **2N7002 gate drive:** Q2–Q4 are driven from 3.3 V logic. That should be enough for the small pull-up currents on `SPK_MUTE` and `AMP_SHUTDOWN`, but check it on the board.
 - **Measure the maximum headphone level** on rev 1, then decide whether to add a fixed attenuator before U2.
-- **AUX input** (1/8" TRS → stereo-to-mono sum → U1D buffer → Daisy AUDIO_IN_2): not drawn yet. U1D is reserved for it.
+- **AUX input level:** measure a phone and a laptop at full volume through J9 and check that the Daisy input doesn't clip.
+  If it does, raise R40/R41.
 - **Polarity:** U2 inverts the signal. Decide whether the firmware negates the output.
 - **TEST_PLAN check 3B.4:** the low-end corner is ≈ 12.6 Hz, not 9 Hz.
 - **Layout:** 4-layer stackup, fresh board.
