@@ -19,12 +19,14 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **Why:** a relative encoder never disagrees with the touchscreen, unlike an absolute pot.
 
 ### Output mute watchdog
-- **Added:** U3 (SN74LVC1G123 retriggerable one-shot), Q2 (2N7002), R24–R27, C22, C23 and TP10.
-- **How it works:** U2 SHUTDOWN (pin 5) was tied to GND. It now connects to `AMP_SHUTDOWN`, which R27 pulls up to +5V,
-  so the amp is muted by default. The firmware toggles `AUDIO_ALIVE` (Daisy pin 33, was D26) once per audio callback.
-  Each rising edge retriggers U3, whose Q output holds Q2 on. Q2 pulls SHUTDOWN low, which unmutes the amp.
-  If the edges stop for ~10 ms (R24 × C22), the amp mutes.
-- **Also muted when:** the Daisy is absent, booting, in DFU, or hung. R25 holds the trigger input low and R26 holds Q2 off.
+- **Added:** U3 (SN74LVC1G123 retriggerable one-shot), R24–R26, C22, C23 and TP10 (`TP_WD_OK`).
+- **How it works:** the firmware toggles `AUDIO_ALIVE` (Daisy pin 33, was D26) once per audio callback.
+  Each rising edge retriggers U3, whose Q output (`WD_OK`) stays high. `WD_OK` drives U2's active-high EN pin directly
+  and Q3's gate for the speaker mute (see the power board connector). If the edges stop for ~10 ms (R24 × C22), `WD_OK` falls
+  and both amps mute.
+- **Also muted when:** the Daisy is absent, booting, in DFU, or hung. R25 holds the trigger input low and R26 holds `WD_OK` low.
+- **Superseded:** this section first used Q2 (2N7002) and R27 to drive the TPA6111A2's active-high SHUTDOWN pin through `AMP_SHUTDOWN`.
+  The TPA6132A2 swap (below) removed them.
 - **Why:** a hung Daisy can loop its last audio buffer at full level. Mute must not depend on the software that has failed.
 
 ### Speaker feed from AUDIO_OUT_2, headphone detect in firmware
@@ -63,8 +65,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   | 8 | `SPK_MUTE` | Carrier → power board | 28 (`SPK_EN`, was A6) | Open drain speaker-amp mute (see below) |
 
 - **Added:** `SPK_MUTE` gate. Q3 and Q4 (2N7002) are in series from `SPK_MUTE` to GND. Q3's gate is `WD_OK` (U3 Q, the watchdog
-  signal that already drives Q2, now named). Q4's gate is `SPK_EN` with R37 (100k) pull-down. `SPK_MUTE` is pulled low (speaker on) only
-  when the watchdog is running **and** the firmware enables the speaker. `AMP_SHUTDOWN` now mutes only the headphone amp (U2).
+  signal that also enables U2). Q4's gate is `SPK_EN` with R37 (100k) pull-down. `SPK_MUTE` is pulled low (speaker on) only
+  when the watchdog is running **and** the firmware enables the speaker. The headphone amp (U2) follows the watchdog only.
 - **Added:** FB1 (ferrite bead, 1206) and C30 (47µF, 1210) between `+5V` and J4 pin 4, which is now `DISPLAY_5V`.
   They keep the display's current pulses (ESP32 Wi-Fi, backlight PWM) off the rail that feeds the analog circuits.
 - **Power board requirements:** nothing above 3.3 V on pins 5–7. Switch the `BATT_SENSE` divider off with the 5 V output
@@ -102,7 +104,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   Through 1k, that pushed ~3 mA into the unpowered Daisy's pin protection diodes and back-powered its 3.3 V rail. 10k limits it to ~0.3 mA.
   With C28 the filter corner is ~160 Hz, still far above battery changes. The power board should also switch the divider off.
 - **R13/R14 100 Ω → 1k.** In rev 1 these loaded the headphone outputs for the J5 tip-switch line out. That line out is gone,
-  so they only need to bleed C14/C15 to GND (pop suppression). At 100 Ω they wasted ~10 mW per channel at full level and loaded U2 alongside 32 Ω headphones.
+  so they only needed to bleed C14/C15 to GND (pop suppression). At 100 Ω they wasted ~10 mW per channel at full level and loaded U2 alongside 32 Ω headphones.
+  (Later removed entirely by the TPA6132A2 swap.)
 - **Added R43/R44 (1k)** in series with the display UART. J4 now carries `UART_TX_CONN`/`UART_RX_CONN`, and the Daisy side keeps
   `DISPLAY_UART_TX`/`DISPLAY_UART_RX`. They limit current if the cable is miswired (TX to TX) or hot-plugged, and add a little ESD margin.
   1k with ~50 pF of cable is ~50 ns, fine up to ~2 Mbaud.
@@ -111,8 +114,25 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - Added voltage ratings to the bulk ceramics: C7 `47uF 10V` (VREF), C9 and C26 `10uF 16V`, C30 `47uF 16V` (5 V rails, derated for DC bias).
 - TP9 renamed `TP_5V` (it is the main +5 V rail, not an amp supply).
 - "Audio output" heading renamed "Headphone buffer", since the speaker path is its own section.
-- Notes updated: Q1's note names `5V_IN`/J3, "Op-amp power rails" capitalisation, and the watchdog note says Q2 mutes U2 and Q3 mutes the speaker amp.
+- Notes updated: Q1's note names `5V_IN`/J3, "Op-amp power rails" capitalisation, and the watchdog note names what each mute does (now: U2 shuts down via EN, Q3 mutes the speaker amp).
 - Title block date updated to 2026-10-24. C9's labels moved below the GND wire so they don't overlap the PWR_FLAG symbols.
+
+### Headphone amp: TPA6111A2 → TPA6132A2 (DirectPath)
+- **Changed:** U2 is now a TI **TPA6132A2RTE** ([datasheet](https://www.ti.com/lit/ds/symlink/tpa6132a2.pdf), WQFN-16 3 × 3 mm with exposed pad,
+  footprint `WQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm_ThermalVias`). An internal charge pump gives it a negative rail,
+  so its outputs sit at 0 V and drive J5 directly.
+- **Removed:** C14/C15 (470µF output caps), R13–R16, R9–R12 (gain resistors, now internal), C16 (bypass), Q2 and R27.
+- **Added:** C33 (2.2µF, VDD decoupling), C34 (2.2µF, HPVDD), C35 (1µF, charge-pump flying cap), C36 (2.2µF, HPVSS), all 0805 X5R or better.
+  HPVDD and HPVSS are generated inside U2. They get caps only (and PWR_FLAGs for ERC), never an external supply.
+- **Wiring:** single-ended inputs per the datasheet (INL+/INR+ to GND). `HP_SOURCE` → C12/C13 (4.7µF, kept) → INL−/INR−.
+  With the 19.8k internal input resistance that is a 1.7 Hz high-pass, and there is no output cap, so bass is flat down to a few Hz.
+  Gain is 0 dB (G0 to +5V, G1 to GND), inverting as before. EN (active high) is `WD_OK` directly.
+- **New symbol:** `seed3-carrier:TPA6132A2RTE` in `seed3-carrier.kicad_sym`. It is the stock KiCad symbol with the pins rearranged:
+  grounded pins on the bottom, charge-pump and output pins on the right, supplies on top.
+- **Layout:** route SGND (pin 15) straight to the J5 sleeve pin, as the datasheet requires, and keep C35/C36 tight to pins 8, 9 and 11.
+  Solder the exposed pad (tied to GND). The QFN needs hot air or a stencil and a hot plate rather than an iron.
+- **Why:** removes the two largest parts in the headphone section, flattens the bass, and adds built-in click-and-pop suppression.
+  Its maximum output is a fixed ~1.1 Vrms (22 mW into 32 Ω) regardless of supply, which also limits how loud the headphones can get.
 
 ## Firmware changes these require
 - Read the encoder on pins 22/23/24 instead of the volume/tone ADCs. Ramp volume changes and use push to mute.
@@ -122,8 +142,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - Add an output clamp or limiter and NaN/Inf guard at the end of the chain. Enable the STM32 internal watchdog.
 - Drive `PWR_HOLD` (pin 27) high early in boot. On a `PWR_BTN` (pin 26, active low) press while running, fade out, mute,
   save settings, then drive `PWR_HOLD` low.
-- Drive `SPK_EN` (pin 28) high to enable the speaker amp, low when headphones are in. This replaces shutting the speaker off
-  through `AMP_SHUTDOWN`.
+- Drive `SPK_EN` (pin 28) high to enable the speaker amp, low when headphones are in. The headphone amp needs no pin of its own:
+  it runs whenever the watchdog sees `AUDIO_ALIVE` pulses.
 - Read `BATT_SENSE` (pin 25, ADC) and send the battery level to the display. Shut down cleanly when it gets low.
 - Read `AUDIO_IN_2` (the AUX input, mono) and mix it in after the NAM model and cabinet EQ, with its own level control from the display.
   It goes to both outputs, so backing tracks play through the speaker and the headphones.
@@ -138,8 +158,9 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **`BATT_SENSE` divider:** the power board sets the ratio. Record it here so the firmware can convert the reading to volts.
 - **Display current:** check the display's datasheet. If it draws well over 1 A, feed it from the power board instead of J4.
 - **J3 orientation:** vertical (B8B-XH-A) is drawn. Switch to the right-angle S8B-XH-A if the cable has to leave along the board.
-- **2N7002 gate drive:** Q2–Q4 are driven from 3.3 V logic. That should be enough for the small pull-up currents on `SPK_MUTE` and `AMP_SHUTDOWN`, but check it on the board.
-- **Measure the maximum headphone level** on rev 1, then decide whether to add a fixed attenuator before U2.
+- **2N7002 gate drive:** Q3 and Q4 are driven from 3.3 V logic. That should be enough for the small pull-up current on `SPK_MUTE`, but check it on the board.
+- **Headphone level:** U2's gain is fixed at 0 dB by G0/G1. If `HP_SOURCE` at full scale clips U2's ~1.1 Vrms output, tie G0 to GND for −6 dB
+  (or limit it in firmware).
 - **AUX input level:** measure a phone and a laptop at full volume through J9 and check that the Daisy input doesn't clip.
   If it does, raise R40/R41.
 - **Polarity:** U2 inverts the signal. Decide whether the firmware negates the output.
