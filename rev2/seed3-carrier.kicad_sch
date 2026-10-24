@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "Seed3 Carrier")
-		(date "2026-10-13")
+		(date "2026-10-24")
 		(rev "2.0")
 		(comment 1 "Audio interface, controls and power")
 	)
@@ -6662,7 +6662,7 @@
 		)
 		(uuid "134724f4-3f1c-4af4-a0e3-a8cde2f06337")
 	)
-	(text "AUDIO OUTPUT"
+	(text "HEADPHONE BUFFER"
 		(exclude_from_sim no)
 		(at 154.94 17.78 0)
 		(effects
@@ -6698,7 +6698,7 @@
 		)
 		(uuid "4c791c2d-07d0-4d94-980a-cf1f0bc4e1e6")
 	)
-	(text "OPAMP power rails"
+	(text "Op-amp power rails"
 		(exclude_from_sim no)
 		(at 34.29 126.746 0)
 		(effects
@@ -6720,7 +6720,7 @@
 		)
 		(uuid "39e876eb-d8b3-467b-934d-ddeafe9ee5c2")
 	)
-	(text "MOSFET is reverse polarity protection"
+	(text "Q1: reverse-polarity protection for 5V_IN (J3)"
 		(exclude_from_sim no)
 		(at 52.324 83.82 0)
 		(effects
@@ -8938,7 +8938,7 @@
 		)
 		(uuid "811a9f12-40f7-4ec2-9234-173310f44232")
 	)
-	(label "DISPLAY_UART_TX"
+	(label "UART_TX_CONN"
 		(at 128.27 154.94 180)
 		(effects
 			(font
@@ -9128,7 +9128,7 @@
 		)
 		(uuid "b844715a-e4e5-4338-b8b1-9d97120f087a")
 	)
-	(label "DISPLAY_UART_RX"
+	(label "UART_RX_CONN"
 		(at 128.27 152.4 180)
 		(effects
 			(font
@@ -9730,7 +9730,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TP_AMP_5V"
+		(property "Value" "TP_5V"
 			(at 350.52 44.4499 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9809,7 +9809,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "47uF"
+		(property "Value" "47uF 10V"
 			(at 78.74 157.4735 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10355,7 +10355,7 @@
 				)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "1k"
 			(at 387.604 87.122 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13511,7 +13511,7 @@
 		(fields_autoplaced yes)
 		(uuid "aeb0ca72-f78a-489a-8726-f2b304eb2b26")
 		(property "Reference" "C9"
-			(at 63.5 100.3235 0)
+			(at 55.88 108.585 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13521,8 +13521,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10uF"
-			(at 63.5 102.8635 0)
+		(property "Value" "10uF 16V"
+			(at 55.88 111.125 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13601,7 +13601,7 @@
 				)
 			)
 		)
-		(property "Value" "100"
+		(property "Value" "1k"
 			(at 387.604 56.642 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18783,7 +18783,7 @@
 			)
 		)
 	)
-	(text "U2 stays muted (SHUTDOWN pulled to +5V) unless the firmware toggles AUDIO_ALIVE\nfrom the audio callback. Each rising edge retriggers U3; if edges stop for ~10 ms\n(Rext x Cext), Q falls, Q2 turns off and the amps mute. Also muted while the Daisy is\nabsent, booting or in DFU (B is held low). AMP_SHUTDOWN mutes U2; the speaker amp uses SPK_MUTE on J3."
+	(text "U2 stays muted (SHUTDOWN pulled to +5V) unless the firmware toggles AUDIO_ALIVE\nfrom the audio callback. Each rising edge retriggers U3; if edges stop for ~10 ms\n(Rext x Cext), Q (WD_OK) falls: Q2 mutes U2 and Q3 mutes the speaker amp. Also muted while the Daisy is\nabsent, booting or in DFU (B is held low). The speaker amp mute is SPK_MUTE on J3."
 		(exclude_from_sim no)
 		(at 289.56 222.25 0)
 		(effects
@@ -19487,7 +19487,7 @@
 				)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10uF 16V"
 			(at 116.84 200.025 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20569,7 +20569,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "10k"
 			(at 81.28 247.65 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22230,7 +22230,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF"
+		(property "Value" "47uF 16V"
 			(at 220.98 257.81 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23715,6 +23715,244 @@
 			(type default)
 		)
 		(uuid "107ac6bb-94ce-43e3-9f23-4db49bacbe59")
+	)
+	(label "DISPLAY_UART_TX"
+		(at 134.62 168.91 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "afba369d-7be3-4a42-927c-938bdcae0069")
+	)
+	(wire
+		(pts
+			(xy 134.62 168.91) (xy 137.16 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bf197d1-54a3-4db1-8193-bd3047b520f0")
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 139.7 168.91 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "422d8852-0783-4511-bb0d-061d0a7ea875")
+		(property "Reference" "R43"
+			(at 139.7 162.56 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 139.7 165.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 139.7 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 139.7 168.91 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d1d71b94-fb5d-4cce-b160-84e48deffb36")
+		)
+		(pin "2"
+			(uuid "c916847f-78de-4ea7-9a24-2c0cfef0f7f8")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 142.24 168.91) (xy 144.78 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57151c23-d580-4ce5-a227-f44c1387d9fd")
+	)
+	(label "UART_TX_CONN"
+		(at 144.78 168.91 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ba98826c-22cb-4c67-aa4f-b83d3df2707d")
+	)
+	(label "UART_RX_CONN"
+		(at 134.62 177.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "04c0a42b-a18d-4ce6-99b2-45248c9727f7")
+	)
+	(wire
+		(pts
+			(xy 134.62 177.8) (xy 137.16 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13bd9131-48c5-43d1-a360-faebd88e7d87")
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 139.7 177.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e2e02bc-5362-4824-9457-72fcb5bb67a7")
+		(property "Reference" "R44"
+			(at 139.7 171.45 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1k"
+			(at 139.7 173.99 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 139.7 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 139.7 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "687fdc58-092a-4440-8baa-9fd80d5cb655")
+		)
+		(pin "2"
+			(uuid "a7a64466-5e37-4e95-8c3a-3a8a9f0ef745")
+		)
+		(instances
+			(project "seed3-carrier"
+				(path "/94ecceca-f8ce-4e68-9c84-99ac5115dfb9"
+					(reference "R44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 142.24 177.8) (xy 144.78 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d4b072f-1875-4c85-91d2-ecd375abb3de")
+	)
+	(label "DISPLAY_UART_RX"
+		(at 144.78 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2e9f153c-47f2-4eae-9b6a-08f59cb8f265")
 	)
 	(sheet_instances
 		(path "/"

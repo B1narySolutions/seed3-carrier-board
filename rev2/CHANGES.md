@@ -57,7 +57,7 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   |---|---|---|---|---|
   | 1, 2 | `5V_IN` | Power board → carrier | 39 (VIN) via Q1 | 5 V supply, two pins share the current |
   | 3, 4 | GND | — | 20 / 40 | Ground, two pins |
-  | 5 | `BATT_SENSE_CONN` | Power board → carrier | 25 (`BATT_SENSE`, was A3) | Battery voltage scaled to ≤ 3.3 V. R32 (1k) and C28 (100nF) filter it into the ADC |
+  | 5 | `BATT_SENSE_CONN` | Power board → carrier | 25 (`BATT_SENSE`, was A3) | Battery voltage scaled to ≤ 3.3 V. R32 (10k) and C28 (100nF) filter it into the ADC |
   | 6 | `PWR_BTN_CONN` | Power board → carrier | 26 (`PWR_BTN`, was A4) | Low while the power button is pressed. R36 (10k) pull-up to 3V3_D, R35 (1k) series, C29 (100nF) |
   | 7 | `PWR_HOLD_CONN` | Carrier → power board | 27 (`PWR_HOLD`, was A5) | High keeps the power on. R33 (1k) series, R34 (100k) pull-down so it is low while the Daisy is absent or booting |
   | 8 | `SPK_MUTE` | Carrier → power board | 28 (`SPK_EN`, was A6) | Open drain speaker-amp mute (see below) |
@@ -67,7 +67,8 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
   when the watchdog is running **and** the firmware enables the speaker. `AMP_SHUTDOWN` now mutes only the headphone amp (U2).
 - **Added:** FB1 (ferrite bead, 1206) and C30 (47µF, 1210) between `+5V` and J4 pin 4, which is now `DISPLAY_5V`.
   They keep the display's current pulses (ESP32 Wi-Fi, backlight PWM) off the rail that feeds the analog circuits.
-- **Power board requirements:** nothing above 3.3 V on pins 5–7. Pull `SPK_MUTE` up on the amp side so the amp is muted when this
+- **Power board requirements:** nothing above 3.3 V on pins 5–7. Switch the `BATT_SENSE` divider off with the 5 V output
+  (or give it ≥ 100k source impedance), so it doesn't drain the battery or feed an unpowered Daisy while the amp is off. Pull `SPK_MUTE` up on the amp side so the amp is muted when this
   board is unpowered or unplugged. Keep the power on for about 2 s after a button press until the Daisy raises `PWR_HOLD`, and force
   the power off when the button is held for about 5 s. The power button itself is panel mounted and wired to the power board.
 - **Why:** one connector for power and signals, a clean firmware-controlled shutdown, battery level on the display, and a speaker
@@ -94,6 +95,24 @@ Changes from rev 1, with the reason for each. Keep this list current as the sche
 - **Why:** the backing track bypasses NAM. The firmware mixes `AUDIO_IN_2` in after the amp model, to both the speaker and headphone outputs.
   R38 holds the summing node near GND when nothing is plugged in, so an empty jack stays quiet. It also gives the source's own coupling caps a DC return.
   The −6 dB from summing gives headroom for hot laptop outputs (up to 2 Vrms). The firmware can add gain for quiet phones.
+
+### Design review fixes (2026-10-24)
+**Technical**
+- **R32 1k → 10k.** While the amp is off, the power board's battery divider can still hold `BATT_SENSE_CONN` near 3.3 V.
+  Through 1k, that pushed ~3 mA into the unpowered Daisy's pin protection diodes and back-powered its 3.3 V rail. 10k limits it to ~0.3 mA.
+  With C28 the filter corner is ~160 Hz, still far above battery changes. The power board should also switch the divider off.
+- **R13/R14 100 Ω → 1k.** In rev 1 these loaded the headphone outputs for the J5 tip-switch line out. That line out is gone,
+  so they only need to bleed C14/C15 to GND (pop suppression). At 100 Ω they wasted ~10 mW per channel at full level and loaded U2 alongside 32 Ω headphones.
+- **Added R43/R44 (1k)** in series with the display UART. J4 now carries `UART_TX_CONN`/`UART_RX_CONN`, and the Daisy side keeps
+  `DISPLAY_UART_TX`/`DISPLAY_UART_RX`. They limit current if the cable is miswired (TX to TX) or hot-plugged, and add a little ESD margin.
+  1k with ~50 pF of cable is ~50 ns, fine up to ~2 Mbaud.
+
+**Style**
+- Added voltage ratings to the bulk ceramics: C7 `47uF 10V` (VREF), C9 and C26 `10uF 16V`, C30 `47uF 16V` (5 V rails, derated for DC bias).
+- TP9 renamed `TP_5V` (it is the main +5 V rail, not an amp supply).
+- "Audio output" heading renamed "Headphone buffer", since the speaker path is its own section.
+- Notes updated: Q1's note names `5V_IN`/J3, "Op-amp power rails" capitalisation, and the watchdog note says Q2 mutes U2 and Q3 mutes the speaker amp.
+- Title block date updated to 2026-10-24. C9's labels moved below the GND wire so they don't overlap the PWR_FLAG symbols.
 
 ## Firmware changes these require
 - Read the encoder on pins 22/23/24 instead of the volume/tone ADCs. Ramp volume changes and use push to mute.
